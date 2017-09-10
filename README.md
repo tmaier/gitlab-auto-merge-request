@@ -22,6 +22,8 @@ stages:
 openMr:
   image: tmaier/gitlab-auto-merge-request
   before_script: [] # We do not need any setup work, let's remove the global one (if any)
+  variables:
+    GIT_STRATEGY: none # We do not need a clone of the GIT repository to create a Merge Request
   stage: openMr
   only:
     - /^feature\/*/ # We have a very strict naming convention
