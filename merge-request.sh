@@ -6,8 +6,12 @@ if [ -z "$GITLAB_PRIVATE_TOKEN" ]; then
   exit 1
 fi
 
+echo "HOST=${HOST}"
+
 # Extract the host where the server is running, and add the URL to the APIs
 [[ $HOST =~ ^https?://[^/]+ ]] && HOST="${BASH_REMATCH[0]}/api/v4/projects/"
+
+echo "HOST=${HOST}"
 
 # Look which is the default branch
 echo "Finding default branch..."
@@ -32,6 +36,8 @@ COUNTBRANCHES=`echo ${LISTMR} | grep -o "\"source_branch\":\"${CI_COMMIT_REF_NAM
 
 # No MR found, let's create a new one
 if [ ${COUNTBRANCHES} -eq "0" ]; then
+    echo "HOST=${HOST}"
+
     echo "Creating merge request..."
     curl "${HOST}${CI_PROJECT_ID}/merge_requests" \
         --verbose \
