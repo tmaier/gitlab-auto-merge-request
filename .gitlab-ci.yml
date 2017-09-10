@@ -2,7 +2,7 @@ stages:
   - openMr
   - otherStages
 
-openMr:
+Open Merge Request:
   image: tmaier/gitlab-auto-merge-request
   before_script: [] # We do not need any setup work, let's remove the global one (if any)
   variables:

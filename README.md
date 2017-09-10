@@ -19,7 +19,7 @@ stages:
   - openMr
   - otherStages
 
-openMr:
+Open Merge Request:
   image: tmaier/gitlab-auto-merge-request
   before_script: [] # We do not need any setup work, let's remove the global one (if any)
   variables:
@@ -28,7 +28,7 @@ openMr:
   only:
     - /^feature\/*/ # We have a very strict naming convention
   script:
-    - ./merge-request.sh # The name of the script
+    - merge-request.sh # The name of the script
 ```
 
 Set a secret variable in your GitLab project with your private token.
