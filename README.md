@@ -12,6 +12,13 @@ Thanks for providing this.
 
 ## Instructions
 
+### 1) `GITLAB_PRIVATE_TOKEN`
+Set a secret variable in your GitLab project with your private token.
+Name it `GITLAB_PRIVATE_TOKEN`.
+This is necessary to raise the Merge Request on your behalf.
+
+### 2) `.gitlab-ci.yml`
+
 Add the following to your `.gitlab-ci.yml` file:
 
 ```yaml
@@ -30,10 +37,6 @@ Open Merge Request:
   script:
     - merge-request.sh # The name of the script
 ```
-
-Set a secret variable in your GitLab project with your private token.
-Name it `GITLAB_PRIVATE_TOKEN`.
-This is necessary to raise the Merge Request on your behalf.
 
 You can see this in action at [`.gitlab-ci.yml` of this project](.gitlab-ci.yml).
 
