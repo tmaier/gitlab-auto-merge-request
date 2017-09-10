@@ -8,4 +8,4 @@ RUN apk add --no-cache \
 
 COPY merge-request.sh /usr/bin/
 
-CMD merge-request.sh
+CMD ["merge-request.sh"]
