@@ -42,7 +42,7 @@ The [GitHub project][] is only a mirror of the [GitLab project][].
 [GitHub project]: https://github.com/tmaier/gitlab-auto-merge-request
 [GitLab project]: https://gitlab.com/tmaier/gitlab-auto-merge-request
 
-Please open Issues and Merge Requests at the [GitLab project].
+Please open Issues and Merge Requests at the [GitLab project][].
 
 ## Authors
 
