@@ -20,7 +20,7 @@ stages:
   - otherStages
 
 Open Merge Request:
-  image: tmaier/gitlab-auto-merge-request
+  image: tmaier/gitlab-auto-merge-request:1
   before_script: [] # We do not need any setup work, let's remove the global one (if any)
   variables:
     GIT_STRATEGY: none # We do not need a clone of the GIT repository to create a Merge Request
@@ -36,6 +36,14 @@ Name it `GITLAB_PRIVATE_TOKEN`.
 This is necessary to raise the Merge Request on your behalf.
 
 You can see this in action at [`.gitlab-ci.yml` of this project](.gitlab-ci.yml).
+
+## Docker images
+
+The images are hosted on [Docker Hub](https://hub.docker.com/r/tmaier/gitlab-auto-merge-request).
+
+Two tags are noteworthy:
+* `latest`: Latest release on `master` branch of this project
+* `1`: Latest stable release of `1.x` version (see note on Semantic Versioning below)
 
 ## This project is managed on GitLab
 
