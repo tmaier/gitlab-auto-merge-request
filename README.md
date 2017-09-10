@@ -1,5 +1,8 @@
 # Open GitLab Merge Requests automatically
 
+[![Docker Automated buil](https://img.shields.io/docker/automated/tmaier/gitlab-auto-merge-request.svg)](https://hub.docker.com/r/tmaier/gitlab-auto-merge-request/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tmaier/gitlab-auto-merge-request.svg)](https://hub.docker.com/r/tmaier/gitlab-auto-merge-request/)
+
 This script is meant to be used in GitLab CI to automatically open Merge Requests for feature branches, if there is none yet.
 
 The script is provided as dedicated docker image to improve maintainability in the future.
