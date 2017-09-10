@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 if [ -z "$GITLAB_PRIVATE_TOKEN" ]; then
   echo "GITLAB_PRIVATE_TOKEN not set"
