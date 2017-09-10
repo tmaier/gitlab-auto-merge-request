@@ -5,11 +5,7 @@ RUN apk add --no-cache \
   bash \
   curl \
   grep \
-  jq \
-  gawk \
-  sed \
-  bc \
-  coreutils
+  jq
 
 COPY merge-request.sh /usr/bin/
 
