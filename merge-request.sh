@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+
+if [ -z "$GITLAB_PRIVATE_TOKEN" ]; then
+  echo "GITLAB_PRIVATE_TOKEN not set"
+  echo "Please set the GitLab Private Token as GITLAB_PRIVATE_TOKEN"
+  exit 1
+fi
+
 # Extract the host where the server is running, and add the URL to the APIs
 [[ $HOST =~ ^https?://[^/]+ ]] && HOST="${BASH_REMATCH[0]}/api/v4/projects/"
 
