@@ -4,7 +4,7 @@ This script is meant to be used in GitLab CI to automatically open Merge Request
 
 The script is provided as dedicated docker image to improve maintainability in the future.
 
-It is based on the script and idea of [Riccardo Padovani](https://rpadovani.com), which he introduced at <https://rpadovani.com/open-mr-gitlab-ci>.
+It is based on the script and idea of [Riccardo Padovani](https://rpadovani.com), which he introduced with his blog post [How to automatically create new MR on Gitlab with Gitlab CI](https://rpadovani.com/open-mr-gitlab-ci).
 Thanks for providing this.
 
 ## Instructions
@@ -25,6 +25,15 @@ openMr:
   script:
     - ./merge-request.sh # The name of the script
 ```
+
+## This project is managed on GitLab
+
+The [GitHub project][] is only a mirror of the [GitLab project][].
+
+[GitHub project]: https://github.com/tmaier/gitlab-auto-merge-request
+[GitLab project]: https://gitlab.com/tmaier/gitlab-auto-merge-request
+
+Please open Issues and Merge Requests at the [GitLab project].
 
 ## Authors
 
