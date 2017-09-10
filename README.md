@@ -35,6 +35,8 @@ Set a secret variable in your GitLab project with your private token.
 Name it `GITLAB_PRIVATE_TOKEN`.
 This is necessary to raise the Merge Request on your behalf.
 
+You can see this in action at [`.gitlab-ci.yml` of this project](.gitlab-ci.yml).
+
 ## This project is managed on GitLab
 
 The [GitHub project][] is only a mirror of the [GitLab project][].
@@ -43,6 +45,16 @@ The [GitHub project][] is only a mirror of the [GitLab project][].
 [GitLab project]: https://gitlab.com/tmaier/gitlab-auto-merge-request
 
 Please open Issues and Merge Requests at the [GitLab project][].
+
+## Versioning
+
+This project follows [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+Following are defined as APIs according to the spec:
+* How to call this script from `.gitlab-ci.yml`
+* Required Environment Variables
+
+Following are not considered as API according to the spec:
+* `Dockerfile` and base image used
 
 ## Authors
 
