@@ -33,7 +33,9 @@ COUNTBRANCHES=`echo ${LISTMR} | grep -o "\"source_branch\":\"${CI_COMMIT_REF_NAM
 # No MR found, let's create a new one
 if [ ${COUNTBRANCHES} -eq "0" ]; then
     echo "Creating merge request..."
-    curl -X POST "${HOST}${CI_PROJECT_ID}/merge_requests" \
+    curl "${HOST}${CI_PROJECT_ID}/merge_requests" \
+        --verbose \
+        -X POST \
         --header "PRIVATE-TOKEN:${GITLAB_PRIVATE_TOKEN}" \
         --header "Content-Type: application/json" \
         --data "${BODY}";
