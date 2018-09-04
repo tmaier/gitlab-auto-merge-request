@@ -13,6 +13,11 @@ fi
 # Look which is the default branch
 TARGET_BRANCH=`curl --silent "${HOST}${CI_PROJECT_ID}" --header "PRIVATE-TOKEN:${GITLAB_PRIVATE_TOKEN}" | jq --raw-output '.default_branch'`;
 
+# Look for title in variables, otherwise use branch name
+if [ -z "$MERGE_REQUEST_TITLE" ]; then
+  MERGE_REQUEST_TITLE = ${CI_COMMIT_REF_NAME}
+fi
+
 # The description of our new MR, we want to remove the branch after the MR has
 # been closed
 BODY="{
@@ -20,7 +25,7 @@ BODY="{
     \"source_branch\": \"${CI_COMMIT_REF_NAME}\",
     \"target_branch\": \"${TARGET_BRANCH}\",
     \"remove_source_branch\": true,
-    \"title\": \"WIP: ${CI_COMMIT_REF_NAME}\",
+    \"title\": \"WIP: ${MERGE_REQUEST_TITLE}\",
     \"assignee_id\":\"${GITLAB_USER_ID}\"
 }";
 
