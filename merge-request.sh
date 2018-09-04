@@ -10,8 +10,10 @@ fi
 # Extract the host where the server is running, and add the URL to the APIs
 [[ $CI_PROJECT_URL =~ ^https?://[^/]+ ]] && HOST="${BASH_REMATCH[0]}/api/v4/projects/"
 
-# Look which is the default branch
-TARGET_BRANCH=`curl --silent "${HOST}${CI_PROJECT_ID}" --header "PRIVATE-TOKEN:${GITLAB_PRIVATE_TOKEN}" | jq --raw-output '.default_branch'`;
+# Look which is the default branch (if it is not set)
+if [ -z "TARGET_BRANCH" ]; then
+  TARGET_BRANCH=`curl --silent "${HOST}${CI_PROJECT_ID}" --header "PRIVATE-TOKEN:${GITLAB_PRIVATE_TOKEN}" | jq --raw-output '.default_branch'`;
+fi
 
 # The description of our new MR, we want to remove the branch after the MR has
 # been closed
