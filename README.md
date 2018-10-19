@@ -41,6 +41,21 @@ Open Merge Request:
 
 You can see this in action at [`.gitlab-ci.yml` of this project](.gitlab-ci.yml).
 
+### Additional features
+
+- You can set prefix for your merge request title like "WIP:"
+
+```yaml
+  ...
+
+  variables:
+    GIT_STRATEGY: none
+    REMOVE_BRANCH_AFTER_MERGE: true # Remove branch after merge
+    COMMIT_PREFIX: WIP # Additional prefix
+  ...
+```
+- If source and target branch is same then merge request will be fail.
+
 ## Docker images
 
 The images are hosted on [Docker Hub](https://hub.docker.com/r/tmaier/gitlab-auto-merge-request).
